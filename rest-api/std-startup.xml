@@ -1,0 +1,30 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <category>
+        <pattern>LOAD AIML B</pattern>
+        <template>
+        	<think><set name="username">username</set></think>
+            <!--<learn>basic_chat.aiml</learn>
+            <learn>bot.aiml</learn>
+            <learn>bot_profile.aiml</learn>-->
+            <learn>welcoming.aiml</learn>
+            <learn>meeting.aiml</learn>
+            <learn>talking.aiml</learn>
+            <learn>topics.aiml</learn>
+            <learn>default.aiml</learn>
+			<learn>goodbyes.aiml</learn>
+        </template>   
+    </category>
+    <category>
+        <pattern>RELOAD</pattern>
+        	<template>	
+         	   <!--<learn>basic_chat.aiml</learn>-->
+	         	<learn>welcoming.aiml</learn>
+	            <learn>meeting.aiml</learn>
+	            <learn>talking.aiml</learn>
+	            <learn>topics.aiml</learn>
+	            <learn>default.aiml</learn>
+	            <learn>goodbyes.aiml</learn>
+        	</template>
+    </category>  
+
+</aiml>

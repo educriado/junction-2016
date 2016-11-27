@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- meeting -->
+
+    <topic name="MEETING">
+    <category>
+        <pattern>IM *</pattern>
+        <that>WHOS THAT</that>
+        <template>
+            <random>
+            <li>Oh, hi <set name="username"><star/></set>!</li>
+            <li>Nice to meet you, <set name="username"><star/></set>!</li>
+            </random>
+            <think><set name="topic"></set></think>
+        </template>
+    </category>
+
+    <category> 
+        <pattern>*</pattern>
+        <that>WHOS THAT</that>
+        <template>
+            <srai>IM <star/></srai>
+        </template>
+    </category>
+
+    <!-- not pretty but safe -->
+    <category>
+        <pattern>*</pattern>
+        <that>_ WHAT IS YOUR NAME</that>
+        <template>
+            <random>
+            <li>Oh, hi <set name="username"><star/></set>!</li>
+            <li>Nice to meet you, <set name="username"><star/></set>!</li>
+            </random>
+            <think><set name="topic"></set></think>
+        </template>
+    </category>
+    <!--                    -->
+    </topic>
+
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            I am a bot, silly!
+        </template>
+    </category>
+
+    <category>
+        <pattern>SAY MY NAME</pattern>
+        <template>
+            You are <get name="username"/>.
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SAY MY NAME</pattern>
+        <template>
+            <srai>say my name</srai>
+        </template>
+    </category>
+
+
+    <category> 
+        <pattern>* YOUR NAME</pattern>
+        <template>
+            I am a bot. What is your name ?
+            <think><set name="topic">meeting</set></think>
+        </template>
+    </category>
+</aiml>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- welcoming -->
+    <category>
+        <pattern>HELLO </pattern>
+        <template>
+        <random>
+            <li>Well, hello!</li>
+            <li>Hello ????</li>
+            <li>Whos that ? <think><set name="topic">meeting</set></think></li>
+        </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO * </pattern>
+        <template>
+            <random>
+            <li><srai>HELLO</srai></li>
+            <li>Who said I am <star/>?</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <srai>hello</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI *</pattern>
+        <template>
+            <srai>hello</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HEY</pattern>
+        <template>
+            <srai>hello</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW ARE YOU</pattern>
+        <template>
+            <think><set name="topic">howareyou</set></think>
+            <random>
+                <li>I am good. What about you?</li>
+                <li>Not really awesome. You?</li>
+                <li>Shut up!</li>
+            </random>
+        </template>
+    </category>
+    <category>
+        <pattern>SUP</pattern>
+        <template>
+            <srai>how are you</srai>
+        </template>
+    </category>
+
+
+    <topic name="HOWAREYOU">
+        <category>
+            <pattern>I AM *</pattern>
+            <template>
+                <think><set name="MOOD"><star/></set></think>
+                <condition name="MOOD">
+                    <li value="good">Nice to hear that!</li>
+                    <li value="bad">Its gonna be ok, dude..</li>
+                    <li>Ugh...</li>
+                </condition>
+                <think><set name="topic"></set></think>
+            </template>
+        </category>
+        <category>
+            <pattern>I FEEL *</pattern>
+            <template>
+                <srai>I AM <star/></srai>
+            </template>
+        </category>
+    </topic>
+
+</aiml>

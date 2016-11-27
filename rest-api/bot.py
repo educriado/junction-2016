@@ -3,6 +3,7 @@ import requests
 import json
 import time
 import random
+import aiml
 
 calais_url = 'https://api.thomsonreuters.com/permid/calais'
 access_token = 'oNqeEfDTsuBOi4OIv9nm0sHWF9pcNrLw'
@@ -93,6 +94,9 @@ class Bot:
         self.topics_count = topics
         self.files = files
         self.conversation = conversation
+        self.kernel = aiml.Kernel()
+        self.kernel.learn("std-startup.xml")
+        self.kernel.respond("load aiml b")
 
     def add_topic(self, topic_name):
         self.topics_count[topic_name] = 1
@@ -114,6 +118,9 @@ class Bot:
         for topic, count in self.topics_count:
             f_topic.write('{}, {}'.format(topic, count))
         f_topic.close()
+
+    def dummy_answer(self, message):
+        return self.kernel.respond(message)
 
     def answer_back(self):
         # Return answer from most interested topic or random
