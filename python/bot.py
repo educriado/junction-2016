@@ -4,7 +4,7 @@ import json
 import time
 
 calais_url = 'https://api.thomsonreuters.com/permid/calais'
-access_token = 'oNqeEfDTsuBOi4OIv9nm0sHWF9pcNrLw'
+access_token = ''
 headers = {
     'X-AG-Access-Token': access_token,
     'Content-Type': 'text/raw',
