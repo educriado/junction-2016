@@ -19,7 +19,7 @@ def fetch_topics(response):
     # or update the count
     found_topics = []
     parsed_content = json.loads(response.text)
-    print parsed_content
+    #print parsed_content
     for key, value in parsed_content.iteritems():
         if '_typeGroup' in value:
             # Filter topics
