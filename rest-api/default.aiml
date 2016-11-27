@@ -3,15 +3,15 @@
     <category>
         <pattern>* RULES</pattern>
         <template>
-            Извините,  я не пишу в <star/>
+            You rule too!<star/>
         </template>
     </category>
 
     <category>
         <pattern>*</pattern>
         <template>
-            Извините, я у бабушки.
-        </template>
+            I have no idea what you are talking about.
+	</template>
     </category>
 
     <category>

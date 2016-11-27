@@ -19,12 +19,15 @@ def fetch_topics(response):
     # or update the count
     found_topics = []
     parsed_content = json.loads(response.text)
+    print parsed_content
     for key, value in parsed_content.iteritems():
         if '_typeGroup' in value:
             # Filter topics
             if value['_typeGroup'] == 'topics':
-                print 'Found topic: {}'.format(value['name'])
-                found_topics.append(value['name'])
+                if value['name'] != 'Technology_Internet':
+	            # Ignore, default Opencalais response
+                    print 'Found topic: {}'.format(value['name'])
+                    found_topics.append(value['name'])
     return found_topics
 
 
