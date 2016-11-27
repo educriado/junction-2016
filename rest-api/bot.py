@@ -21,6 +21,7 @@ def fetch_topics(response):
     parsed_content = json.loads(response.text)
     #print parsed_content
     for key, value in parsed_content.iteritems():
+        print '{} {}'.format(key, value)
         if '_typeGroup' in value:
             # Filter topics
             if value['_typeGroup'] == 'topics':
@@ -146,4 +147,9 @@ class Bot:
         thread.start()
 
 if __name__ == '__main__':
-    main()
+    f = open('/tmp/test-api', 'w+')
+    f.write('Economy is very important between Europe and America (USA)')
+    files = {'file': f}
+    response = requests.post(calais_url, files=files, headers=headers,
+                             timeout=80)
+    print response.text
