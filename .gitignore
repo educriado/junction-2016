@@ -1,0 +1,4 @@
+rest-api/flask
+
+*.pyc
+.idea/
