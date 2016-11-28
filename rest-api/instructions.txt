@@ -1,5 +1,0 @@
-Install virtualenv using pip, then
-virtualenv flask
-flask/bin/pip install flask
-chmod a+x app.py
-./app.py
