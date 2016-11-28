@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- goodbyes -->
+
+    <category>
+        <pattern>BYE</pattern>
+        <template>
+            <random>
+                <li>Bye, <get name="username"/>!</li>
+                <li>Bye, <get name="username"/>! See you soon!</li>
+                <li>It was a pleasure to talk to you. Come back soon!</li>
+                <li>See you soon, bye!</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template>
+            <srai>bye</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GOODBYE *</pattern>
+        <template>
+            <srai>bye</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>BYE *</pattern>
+        <template>
+            <srai>bye</srai>
+        </template>
+    </category>
+
+</aiml>

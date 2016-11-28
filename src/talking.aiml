@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- talking -->
+    <category>
+        <pattern>I WANT TO TALK</pattern>
+        <template>
+            What do you want to <set name="topic">talk</set> about ?
+        </template>
+    </category>
+    <category>
+        <pattern>* I WANT TO TALK</pattern>
+        <template>
+            <srai>i want to talk</srai>
+        </template>
+    </category>
+
+    <topic name="TALK">
+    <category>
+        <pattern>CATS</pattern>
+        <template>
+            <think><set name="topic">cats</set></think>
+            <srai>kitties</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* CATS</pattern>
+        <template>
+            <srai>cats</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            Sorry, I cant talk about <star/> right now.
+            <think><set name="topic"></set></think>
+        </template>
+    </category>
+    </topic>
+</aiml>
